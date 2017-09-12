@@ -16,5 +16,6 @@ public class NumberGuesser {
     public static void main(String[] args) {
         // TODO code application logic here
 	System.out.println("Hey There");
+        System.out.println("It works");
     }
 }
