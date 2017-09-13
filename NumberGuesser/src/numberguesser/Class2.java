@@ -10,5 +10,5 @@ package numberguesser;
  * @author G
  */
 public class Class2 {
-    //help
+    
 }
