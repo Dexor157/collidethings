@@ -51,6 +51,7 @@ public class Drawcube extends JFrame {
         Line2D lin1 = new Line2D.Float(x, y, x, y-height);
         Line2D lin2 = new Line2D.Float(x, y, x+slantwidth, y-slantheight);
         Line2D lin3 = new Line2D.Float(x, y-height, x-width, y-height);
+        g2.setColor(Color.red);
         g2.draw(lin0);
         g2.draw(lin1);
         g2.draw(lin2);
