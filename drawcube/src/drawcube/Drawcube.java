@@ -45,8 +45,7 @@ public class Drawcube extends JFrame {
         System.out.println(slantwidth);
         System.out.println(slantheight);
         Graphics2D g2 = (Graphics2D) g;
-        //sean version
-        //take that, master branch
+        //This one is the sean version actually
         Line2D lin0 = new Line2D.Float(x, y, x-width,y);
         Line2D lin1 = new Line2D.Float(x, y, x, y-height);
         Line2D lin2 = new Line2D.Float(x, y, x+slantwidth, y-slantheight);
