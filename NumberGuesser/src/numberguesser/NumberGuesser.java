@@ -9,7 +9,7 @@ package numberguesser;
  * @author SeanDunlop0502
  */
 public class NumberGuesser {
-
+    
     /**
      * @param args the command line arguments
      */
@@ -18,8 +18,10 @@ public class NumberGuesser {
 	System.out.println("Hey There");
         System.out.println("It works");
         System.out.println("Pull?");
+        Class1 help = new Class1("Hey");
+        sysout(help.hello.toString());
     }
-    public void sysout(Object... in){
+    public static void sysout(Object... in){
         for (int x=0;x<in.length;x++){
             System.out.println(in[x]);
         }
