@@ -19,7 +19,7 @@ public class NumberGuesser {
         System.out.println("It works");
         System.out.println("Pull?");
     }
-    public void out(Object... in){
+    public void sysout(Object... in){
         for (int x=0;x<in.length;x++){
             System.out.println(in[x]);
         }
