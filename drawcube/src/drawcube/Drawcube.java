@@ -9,6 +9,7 @@ import java.awt.*;
 import java.awt.geom.*;
 import java.math.*;
 import java.util.*;
+import javax.swing.event.ChangeEvent;
 public class Drawcube extends JFrame {
     
     int width = 150;
@@ -17,15 +18,17 @@ public class Drawcube extends JFrame {
     int y = 400;
     JTextField inputfield = new JTextField();
     JButton inputbutton = new JButton("Enter");
+    JSlider slider = new JSlider();
+    
     public Drawcube(){
-        
         super ("Drawcube");
         setSize(1300,800);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLayout(null);
         setResizable(false);
         
-        
+        slider.setBounds(100,100,500,20);
+        add(slider);
         
         inputfield.setBounds(50, 50, 100, 20);
         inputbutton.setBounds(150,50,100,50);
@@ -33,8 +36,13 @@ public class Drawcube extends JFrame {
         add(inputbutton);
         setVisible(true);
         
-        inputbutton.addActionListener(new java.awt.event.ActionListener(){
+        slider.addChangeListener(new javax.swing.event.ChangeListener() {
+            public void stateChanged(javax.swing.event.ChangeEvent evt) {
+            JSliderStateChanged(evt);
+            }
+        });  
         
+        inputbutton.addActionListener(new java.awt.event.ActionListener(){
         public void actionPerformed(java.awt.event.ActionEvent evt){
         inputbuttonActionPerformed(evt);
         }    
@@ -58,6 +66,11 @@ public class Drawcube extends JFrame {
         repaint();
         
     }
+    public void JSliderStateChanged(javax.swing.event.ChangeEvent evt) {                                      
+        width = ((1+slider.getValue())*2);
+        repaint();
+
+    }              
     public void paint(Graphics g) {
         super.paint(g);  // fixes the immediate problem.
         
