@@ -68,8 +68,21 @@ public class Drawcube extends JFrame {
         System.out.println(slantheight);
         Graphics2D g2 = (Graphics2D) g;
         //This one is the sean version actually
-        //SEAN VERSION SERIOUSLY GUYS 
-        Line2D lin0 = new Line2D.Float(x, y, x-width,y);
+        //SEAN VERSION SERIOUSLY GUYS
+        
+        //origin is ldb
+        Point ldf = new Point(0,0, 100 );
+        Point rdf = new Point(100, 0, 100);
+        Point luf = new Point(0,100,100);
+        Point ruf = new Point(100,100,100);
+        Point ldb = new Point(0,0,0);
+        Point rdb = new Point(100,0,0);
+        Point lub = new Point(0,100,0);
+        Point rub = new Point(100,100,0);
+        
+        
+        
+        /*Line2D lin0 = new Line2D.Float(x, y, x-width,y);
         Line2D lin1 = new Line2D.Float(x, y, x, y-height);
         Line2D lin2 = new Line2D.Float(x, y, x+slantwidth, y-slantheight);
         Line2D lin3 = new Line2D.Float(x, y-height, x-width, y-height);
@@ -77,7 +90,9 @@ public class Drawcube extends JFrame {
         Line2D lin5 = new Line2D.Float(x - width, y-height, x-width+slantwidth, y-height-slantheight);
         Line2D lin6 = new Line2D.Float(x, y-height, x+slantwidth, y-height-slantheight);
         Line2D lin7 = new Line2D.Float(x+slantwidth, y-slantheight, x+slantwidth,y-height-slantheight);
-        Line2D lin8 = new Line2D.Float(x-width+slantwidth, y-height-slantheight,x+slantwidth,y-height-slantheight);
+        Line2D lin8 = new Line2D.Float(x-width+slantwidth, y-height-slantheight,x+slantwidth,y-height-slantheight);*/
+        
+        
         g2.setColor(Color.red);
         g2.draw(lin0);
         g2.draw(lin1);
@@ -93,5 +108,6 @@ public class Drawcube extends JFrame {
     public static void main(String[] args) {
         Drawcube frame = new Drawcube(); 
     }
+    
     
 }
