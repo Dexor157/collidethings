@@ -10,8 +10,8 @@ import java.awt.*;
  * @author G
  */
 public class Net {
-    Point[] points;
-    Line[] lines;
+    public Point[] points;
+    public Line[] lines;
     public Net(Point... _points){
         points = _points;
         lines = new Line[points.length];
@@ -22,5 +22,8 @@ public class Net {
                 lines[x] = new Line(points[x], points[x-1]);
             }
         }
+    }
+    public int length(){
+        return points.length;
     }
 }

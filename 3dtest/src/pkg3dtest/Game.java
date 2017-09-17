@@ -37,6 +37,7 @@ public class Game extends JPanel implements Runnable {
     Net pillar = new Net(pillarpoints);
     Net edge = new Net(edgepoints);
     Map m1 = new Map(edge, pillar);
+    Line[] rays = new Line[m1.totalpoints()];
     String 
         str_appath = (System.getProperty("user.dir"))
     ;
@@ -93,9 +94,20 @@ public class Game extends JPanel implements Runnable {
             break;
         }
     }
+    public void Rays(){
+        Line[] rays = new Line[m1.totalpoints()];
+        for (int x = 0;x<m1.totalpoints();x++){
+            for (int y = 0;y<m1.nets.length;y++){
+                
+            }
+        }
+    }
     public void run() {
         
         while(true){
+            //Rays();
+            System.out.println(m1.nets.length);
+            repaint();
             try{
                 Thread.sleep(33); //delays loop by 1/30th of a second to save cpu
             }catch(InterruptedException ex){

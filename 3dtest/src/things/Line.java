@@ -6,10 +6,10 @@ import java.awt.*;
  * @author G
  */
 public class Line {
-    boolean horizontal;
-    int x1,x2;
-    int y1,y2;
-    int slope, b;
+    public boolean horizontal;
+    public int x1,x2;
+    public int y1,y2;
+    public int slope, b;
     Point temp;
     public Line(Point p1, Point p2){
         if (p1.x == p2.x){
