@@ -21,18 +21,18 @@ public class Game extends JPanel implements Runnable {
     int gameheight = (int)(gamewidth * .75);
     int direc = 90;
     int view = 66;
-    Point player = new Point(50,50);
+    Point player = new Point(50,25);
     Point[] edgepoints = {
         new Point(0,0), 
         new Point(0,100),
-        new Point(100,0),
-        new Point(100,100)
+        new Point(100,100),
+        new Point(100,0)
     };
     Point[] pillarpoints = {
         new Point(20,20), 
         new Point(20,40),
-        new Point(40,20),
-        new Point(40,40)
+        new Point(40,40),
+        new Point(40,20)
     };
     Net pillar = new Net(pillarpoints);
     Net edge = new Net(edgepoints);
@@ -95,18 +95,22 @@ public class Game extends JPanel implements Runnable {
         }
     }
     public void Rays(){
-        Line[] rays = new Line[m1.totalpoints()];
-        for (int x = 0;x<m1.totalpoints();x++){
-            for (int y = 0;y<m1.nets.length;y++){
-                
+        for (int x = 0;x<m1.nets.length;x++){
+            for (int y = 0;y<m1.nets[x].length();y++){
+                rays[x+y] = new Line(m1.nets[x].points[y],player);
+                sysout("rays (" + x +", "+ y + ")",rays[x+y].toString());
             }
+        }
+    }
+    public void sysout(Object... in){
+        for (int x = 0;x<in.length;x++){
+            System.out.println(in[x]);
         }
     }
     public void run() {
         
         while(true){
-            //Rays();
-            System.out.println(m1.nets.length);
+            Rays();
             repaint();
             try{
                 Thread.sleep(33); //delays loop by 1/30th of a second to save cpu

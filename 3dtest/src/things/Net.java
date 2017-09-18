@@ -12,8 +12,10 @@ import java.awt.*;
 public class Net {
     public Point[] points;
     public Line[] lines;
+    public Boolean[] visible;
     public Net(Point... _points){
         points = _points;
+        visible = new Boolean[points.length];
         lines = new Line[points.length];
         for (int x = 0;x<lines.length;x++){
             if (x == 0){
