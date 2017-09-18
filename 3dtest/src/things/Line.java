@@ -7,12 +7,21 @@ import java.awt.*;
  */
 public class Line {
     public boolean vertical;
-    public double x1,x2;
-    public double y1,y2;
-    public double rise,run;
-    public double slope, b;
-    Point p1,p2;
-    Point temp;
+    public double 
+        x1,
+        x2,
+        y1,
+        y2,    
+        rise,
+        run,
+        slope,
+        b
+    ;
+    Point 
+        p1,
+        p2,
+        temp
+    ;
     public Line(Point _p1, Point _p2){
         p1 = _p1;
         p2 = _p2;

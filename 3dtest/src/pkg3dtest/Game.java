@@ -19,9 +19,10 @@ public class Game extends JPanel implements Runnable {
     ;
     int gamewidth = 400;
     int gameheight = (int)(gamewidth * .75);
-    int direc = 90;
-    int view = 66;
-    Point player = new Point(50,25);
+    double direc = 90;
+    double view = 66;
+    Point prevplayer;
+    Point player = new Point(50,33);
     Point[] edgepoints = {
         new Point(0,0), 
         new Point(0,100),
@@ -38,12 +39,8 @@ public class Game extends JPanel implements Runnable {
     Net edge = new Net(edgepoints);
     Map m1 = new Map(edge, pillar);
     Line[] rays = new Line[m1.totalpoints()];
-    String 
-        str_appath = (System.getProperty("user.dir"))
-    ;
-    Thread 
-        timer
-    ;
+    final String str_appath = (System.getProperty("user.dir"));
+    Thread timer;
     public Game() {
         timer=new Thread(this); //initializes the thread and puts Class1 into it
         timer.start(); //begins the thread
@@ -95,20 +92,23 @@ public class Game extends JPanel implements Runnable {
         }
     }
     public void Rays(){
-        for (int x = 0;x<m1.nets.length;x++){
-            for (int y = 0;y<m1.nets[x].length();y++){
-                rays[x+y] = new Line(m1.nets[x].points[y],player);
-                sysout("rays (" + x +", "+ y + ")",rays[x+y].toString());
+        if (prevplayer != player){
+            for (int x = 0;x<m1.nets.length;x++){
+                for (int y = 0;y<m1.nets[x].length();y++){
+                    rays[x+y] = new Line(m1.nets[x].points[y],player);
+                    sysout("rays (" + x +", "+ y + ")",rays[x+y].toString());
+                }
             }
+            prevplayer = player;
         }
     }
+    
     public void sysout(Object... in){
         for (int x = 0;x<in.length;x++){
             System.out.println(in[x]);
         }
     }
     public void run() {
-        
         while(true){
             Rays();
             repaint();
