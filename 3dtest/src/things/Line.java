@@ -27,11 +27,12 @@ public class Line {
         p2 = _p2;
         if (p1.x == p2.x){
             vertical = true;
-            if (p1.y > p2.y){
+            if (p1.y < p2.y){
                temp = p1;
                p1 = p2;
                p2 = temp;
             }
+            x1 = p1.x;
             y1 = p1.y;
             y2 = p2.y;
         }else if (p2.y == p1.y){
@@ -41,6 +42,8 @@ public class Line {
                p1 = p2;
                p2 = temp;
             }
+            b = p2.y;
+            slope = 0;
             x2 = p2.x;
             x1 = p1.x;
         }else{

@@ -59,6 +59,6 @@ public class Main extends JFrame{
         this.setMinimumSize(new Dimension(400, 400));
         this.setMaximumSize(new Dimension(400, 400));
         this.setContentPane(getJContentPane());
-        this.setTitle("Dance Dance Deatholution");
+        this.setTitle("3D SHIT");
     }
 }

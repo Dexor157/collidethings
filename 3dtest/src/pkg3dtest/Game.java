@@ -92,17 +92,17 @@ public class Game extends JPanel implements Runnable {
         }
     }
     public void Rays(){
-        if (prevplayer != player){
+        if (prevplayer != player){ //ONLY GOOD WHEN NO WALLS ARE MOVING
             for (int x = 0;x<m1.nets.length;x++){
                 for (int y = 0;y<m1.nets[x].length();y++){
                     rays[x+y] = new Line(m1.nets[x].points[y],player);
-                    sysout("rays (" + x +", "+ y + ")",rays[x+y].toString());
+                    //sysout("rays (" + x +", "+ y + ")",rays[x+y].toString());
                 }
             }
             prevplayer = player;
         }
     }
-    
+     
     public void sysout(Object... in){
         for (int x = 0;x<in.length;x++){
             System.out.println(in[x]);
